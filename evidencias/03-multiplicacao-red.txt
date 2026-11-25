@@ -1,0 +1,38 @@
+Etapa: 03-multiplicacao
+Fase: red
+Execução (UTC): 2026-11-25T11:11:37.613Z
+Comando: npm test -- --reporter=verbose
+Código de saída: 1
+
+
+> atividade-pratica-tdd-github@1.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.5 D:/Dev/atividade-pratica-tdd-github
+
+ ✓ tests/calculadora.test.ts > Calculadora de operações > soma 3 e 5 e retorna 8 2ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > subtrai 4 de 10 e retorna 6 0ms
+ × tests/calculadora.test.ts > Calculadora de operações > multiplica 4 por 3 e retorna 12 2ms
+   → multiplicar is not a function
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  08:11:37
+   Duration  253ms (transform 23ms, setup 0ms, import 48ms, tests 6ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/calculadora.test.ts > Calculadora de operações > multiplica 4 por 3 e retorna 12
+TypeError: multiplicar is not a function
+ ❯ tests/calculadora.test.ts:14:24
+     12|
+     13|   it("multiplica 4 por 3 e retorna 12", () => {
+     14|     expect(calculadora.multiplicar(4, 3)).toBe(12);
+       |                        ^
+     15|   });
+     16| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
