@@ -1,0 +1,72 @@
+Etapa: 07-desconto-dez-por-cento
+Fase: red
+Execução (UTC): 2026-11-25T11:12:22.092Z
+Comando: npm test -- --reporter=verbose
+Código de saída: 1
+
+
+> atividade-pratica-tdd-github@1.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.5 D:/Dev/atividade-pratica-tdd-github
+
+ ✓ tests/calculadora.test.ts > Calculadora de operações > soma 3 e 5 e retorna 8 2ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > subtrai 4 de 10 e retorna 6 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > multiplica 4 por 3 e retorna 12 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > divide 10 por 2 e retorna 5 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > lança o erro Divisão por zero ao dividir por zero 1ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > compra de R$ 0 fica em R$ 0 2ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > compra de R$ 50 fica em R$ 50 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > compra de R$ 99.99 fica em R$ 99.99 0ms
+ × tests/descontos.test.ts > Sistema de descontos > aplica dez por cento a R$ 100 6ms
+   → expected 100 to be 90 // Object.is equality
+ × tests/descontos.test.ts > Sistema de descontos > aplica dez por cento a R$ 150 1ms
+   → expected 150 to be 135 // Object.is equality
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  2 failed | 8 passed (10)
+   Start at  08:12:21
+   Duration  283ms (transform 34ms, setup 0ms, import 86ms, tests 15ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/descontos.test.ts > Sistema de descontos > aplica dez por cento a R$ 100
+AssertionError: expected 100 to be 90 // Object.is equality
+
+- Expected
++ Received
+
+- 90
++ 100
+
+ ❯ tests/descontos.test.ts:10:49
+      8|
+      9|   it.each([[100, 90], [150, 135]])("aplica dez por cento a R$ %s", (va…
+     10|     expect(descontos.calcularValorFinal(valor)).toBe(esperado);
+       |                                                 ^
+     11|   });
+     12| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/descontos.test.ts > Sistema de descontos > aplica dez por cento a R$ 150
+AssertionError: expected 150 to be 135 // Object.is equality
+
+- Expected
++ Received
+
+- 135
++ 150
+
+ ❯ tests/descontos.test.ts:10:49
+      8|
+      9|   it.each([[100, 90], [150, 135]])("aplica dez por cento a R$ %s", (va…
+     10|     expect(descontos.calcularValorFinal(valor)).toBe(esperado);
+       |                                                 ^
+     11|   });
+     12| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
