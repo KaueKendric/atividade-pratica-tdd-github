@@ -1,0 +1,29 @@
+Etapa: 07-desconto-dez-por-cento
+Fase: green
+Execução (UTC): 2026-11-25T11:12:23.803Z
+Comando: npm test -- --reporter=verbose
+Código de saída: 0
+
+
+> atividade-pratica-tdd-github@1.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.5 D:/Dev/atividade-pratica-tdd-github
+
+ ✓ tests/descontos.test.ts > Sistema de descontos > compra de R$ 0 fica em R$ 0 2ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > compra de R$ 50 fica em R$ 50 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > compra de R$ 99.99 fica em R$ 99.99 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > aplica dez por cento a R$ 100 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > aplica dez por cento a R$ 150 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > soma 3 e 5 e retorna 8 2ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > subtrai 4 de 10 e retorna 6 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > multiplica 4 por 3 e retorna 12 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > divide 10 por 2 e retorna 5 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > lança o erro Divisão por zero ao dividir por zero 1ms
+
+ Test Files  2 passed (2)
+      Tests  10 passed (10)
+   Start at  08:12:23
+   Duration  275ms (transform 36ms, setup 0ms, import 88ms, tests 9ms, environment 0ms)
+
