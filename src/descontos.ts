@@ -1,9 +1,10 @@
+const LIMITE_DESCONTO_INTERMEDIARIO = 100;
+const LIMITE_DESCONTO_MAIOR = 200;
+
 export function calcularValorFinal(valor: number): number {
-  if (valor >= 200) {
-    return Math.round(valor * 100 * 0.8) / 100;
-  }
-  if (valor >= 100) {
-    return Math.round(valor * 100 * 0.9) / 100;
-  }
-  return Math.round(valor * 100) / 100;
+  const desconto = valor >= LIMITE_DESCONTO_MAIOR
+    ? 0.2
+    : valor >= LIMITE_DESCONTO_INTERMEDIARIO ? 0.1 : 0;
+
+  return Math.round(valor * 100 * (1 - desconto)) / 100;
 }
