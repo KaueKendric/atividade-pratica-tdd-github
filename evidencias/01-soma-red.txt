@@ -1,0 +1,36 @@
+Etapa: 01-soma
+Fase: red
+Execução (UTC): 2026-11-25T11:11:31.036Z
+Comando: npm test -- --reporter=verbose
+Código de saída: 1
+
+
+> atividade-pratica-tdd-github@1.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.5 D:/Dev/atividade-pratica-tdd-github
+
+ × tests/calculadora.test.ts > Calculadora de operações > soma 3 e 5 e retorna 8 3ms
+   → somar is not a function
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  08:11:30
+   Duration  262ms (transform 25ms, setup 0ms, import 50ms, tests 5ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/calculadora.test.ts > Calculadora de operações > soma 3 e 5 e retorna 8
+TypeError: somar is not a function
+ ❯ tests/calculadora.test.ts:6:24
+      4| describe("Calculadora de operações", () => {
+      5|   it("soma 3 e 5 e retorna 8", () => {
+      6|     expect(calculadora.somar(3, 5)).toBe(8);
+       |                        ^
+      7|   });
+      8| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
