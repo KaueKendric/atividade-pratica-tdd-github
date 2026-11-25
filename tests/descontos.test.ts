@@ -13,4 +13,8 @@ describe("Sistema de descontos", () => {
   it.each([[200, 160], [250, 200]])("aplica vinte por cento a R$ %s", (valor, esperado) => {
     expect(descontos.calcularValorFinal(valor)).toBe(esperado);
   });
+
+  it.each([[123.45, 111.11], [199.99, 179.99], [200.03, 160.02], [100.05, 90.05]])("arredonda o valor final de R$ %s para R$ %s", (valor, esperado) => {
+    expect(descontos.calcularValorFinal(valor)).toBe(esperado);
+  });
 });

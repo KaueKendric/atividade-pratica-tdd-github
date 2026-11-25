@@ -1,0 +1,118 @@
+Etapa: 09-arredondamento
+Fase: red
+Execução (UTC): 2026-11-25T11:12:52.149Z
+Comando: npm test -- --reporter=verbose
+Código de saída: 1
+
+
+> atividade-pratica-tdd-github@1.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.5 D:/Dev/atividade-pratica-tdd-github
+
+ ✓ tests/calculadora.test.ts > Calculadora de operações > soma 3 e 5 e retorna 8 2ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > subtrai 4 de 10 e retorna 6 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > multiplica 4 por 3 e retorna 12 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > divide 10 por 2 e retorna 5 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > lança o erro Divisão por zero ao dividir por zero 1ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > compra de R$ 0 fica em R$ 0 2ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > compra de R$ 50 fica em R$ 50 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > compra de R$ 99.99 fica em R$ 99.99 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > aplica dez por cento a R$ 100 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > aplica dez por cento a R$ 150 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > aplica vinte por cento a R$ 200 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > aplica vinte por cento a R$ 250 0ms
+ × tests/descontos.test.ts > Sistema de descontos > arredonda o valor final de R$ 123.45 para R$ 111.11 6ms
+   → expected 111.105 to be 111.11 // Object.is equality
+ × tests/descontos.test.ts > Sistema de descontos > arredonda o valor final de R$ 199.99 para R$ 179.99 1ms
+   → expected 179.991 to be 179.99 // Object.is equality
+ × tests/descontos.test.ts > Sistema de descontos > arredonda o valor final de R$ 200.03 para R$ 160.02 0ms
+   → expected 160.024 to be 160.02 // Object.is equality
+ × tests/descontos.test.ts > Sistema de descontos > arredonda o valor final de R$ 100.05 para R$ 90.05 0ms
+   → expected 90.045 to be 90.05 // Object.is equality
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  4 failed | 12 passed (16)
+   Start at  08:12:51
+   Duration  306ms (transform 39ms, setup 0ms, import 95ms, tests 17ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/descontos.test.ts > Sistema de descontos > arredonda o valor final de R$ 123.45 para R$ 111.11
+AssertionError: expected 111.105 to be 111.11 // Object.is equality
+
+- Expected
++ Received
+
+- 111.11
++ 111.105
+
+ ❯ tests/descontos.test.ts:18:49
+     16|
+     17|   it.each([[123.45, 111.11], [199.99, 179.99], [200.03, 160.02], [100.…
+     18|     expect(descontos.calcularValorFinal(valor)).toBe(esperado);
+       |                                                 ^
+     19|   });
+     20| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/descontos.test.ts > Sistema de descontos > arredonda o valor final de R$ 199.99 para R$ 179.99
+AssertionError: expected 179.991 to be 179.99 // Object.is equality
+
+- Expected
++ Received
+
+- 179.99
++ 179.991
+
+ ❯ tests/descontos.test.ts:18:49
+     16|
+     17|   it.each([[123.45, 111.11], [199.99, 179.99], [200.03, 160.02], [100.…
+     18|     expect(descontos.calcularValorFinal(valor)).toBe(esperado);
+       |                                                 ^
+     19|   });
+     20| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/descontos.test.ts > Sistema de descontos > arredonda o valor final de R$ 200.03 para R$ 160.02
+AssertionError: expected 160.024 to be 160.02 // Object.is equality
+
+- Expected
++ Received
+
+- 160.02
++ 160.024
+
+ ❯ tests/descontos.test.ts:18:49
+     16|
+     17|   it.each([[123.45, 111.11], [199.99, 179.99], [200.03, 160.02], [100.…
+     18|     expect(descontos.calcularValorFinal(valor)).toBe(esperado);
+       |                                                 ^
+     19|   });
+     20| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/descontos.test.ts > Sistema de descontos > arredonda o valor final de R$ 100.05 para R$ 90.05
+AssertionError: expected 90.045 to be 90.05 // Object.is equality
+
+- Expected
++ Received
+
+- 90.05
++ 90.045
+
+ ❯ tests/descontos.test.ts:18:49
+     16|
+     17|   it.each([[123.45, 111.11], [199.99, 179.99], [200.03, 160.02], [100.…
+     18|     expect(descontos.calcularValorFinal(valor)).toBe(esperado);
+       |                                                 ^
+     19|   });
+     20| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
