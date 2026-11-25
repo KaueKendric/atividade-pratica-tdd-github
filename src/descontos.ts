@@ -1,9 +1,9 @@
 export function calcularValorFinal(valor: number): number {
   if (valor >= 200) {
-    return valor * 0.8;
+    return Math.round(valor * 100 * 0.8) / 100;
   }
   if (valor >= 100) {
-    return valor * 0.9;
+    return Math.round(valor * 100 * 0.9) / 100;
   }
-  return valor;
+  return Math.round(valor * 100) / 100;
 }
