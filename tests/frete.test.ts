@@ -9,4 +9,8 @@ describe("Cálculo de frete", () => {
   it.each([[100, 10], [199.99, 10]])("compra de R$ %s paga frete reduzido", (valor, esperado) => {
     expect(frete.calcularFrete(valor)).toBe(esperado);
   });
+
+  it.each([[200, 0], [250, 0]])("compra de R$ %s recebe frete gratuito", (valor, esperado) => {
+    expect(frete.calcularFrete(valor)).toBe(esperado);
+  });
 });
