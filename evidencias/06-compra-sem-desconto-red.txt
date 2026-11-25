@@ -1,0 +1,47 @@
+Etapa: 06-compra-sem-desconto
+Fase: red
+Execução (UTC): 2026-11-25T11:12:18.635Z
+Comando: npm test -- --reporter=verbose
+Código de saída: 1
+
+
+> atividade-pratica-tdd-github@1.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.5 D:/Dev/atividade-pratica-tdd-github
+
+ ✓ tests/calculadora.test.ts > Calculadora de operações > soma 3 e 5 e retorna 8 2ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > subtrai 4 de 10 e retorna 6 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > multiplica 4 por 3 e retorna 12 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > divide 10 por 2 e retorna 5 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > lança o erro Divisão por zero ao dividir por zero 1ms
+ × tests/descontos.test.ts > Sistema de descontos > compra de R$ 0 fica em R$ 0 4ms
+   → calcularValorFinal is not a function
+ × tests/descontos.test.ts > Sistema de descontos > compra de R$ 50 fica em R$ 50 0ms
+   → calcularValorFinal is not a function
+ × tests/descontos.test.ts > Sistema de descontos > compra de R$ 99.99 fica em R$ 99.99 0ms
+   → calcularValorFinal is not a function
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  3 failed | 5 passed (8)
+   Start at  08:12:18
+   Duration  298ms (transform 40ms, setup 0ms, import 95ms, tests 11ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/descontos.test.ts > Sistema de descontos > compra de R$ 0 fica em R$ 0
+ FAIL  tests/descontos.test.ts > Sistema de descontos > compra de R$ 50 fica em R$ 50
+ FAIL  tests/descontos.test.ts > Sistema de descontos > compra de R$ 99.99 fica em R$ 99.99
+TypeError: calcularValorFinal is not a function
+ ❯ tests/descontos.test.ts:6:22
+      4| describe("Sistema de descontos", () => {
+      5|   it.each([[0, 0], [50, 50], [99.99, 99.99]])("compra de R$ %s fica em…
+      6|     expect(descontos.calcularValorFinal(valor)).toBe(esperado);
+       |                      ^
+      7|   });
+      8| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
