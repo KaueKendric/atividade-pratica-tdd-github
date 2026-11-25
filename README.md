@@ -63,7 +63,7 @@ A divisão por zero lança `Error` com a mensagem exata `Divisão por zero`.
 | A partir de R$ 100 e abaixo de R$ 200 | 10% |
 | A partir de R$ 200 | 20% |
 
-O domínio de entrada da atividade é de valores não negativos. O resultado é um número arredondado para duas casas decimais; por exemplo, `90` representa R$ 90,00, sem necessidade de retornar uma string `"90.00"`.
+Os valores de compra considerados são não negativos. O resultado é arredondado para duas casas decimais e retornado como número. Por exemplo, `90` representa R$ 90,00.
 
 Casos mínimos cobertos: `50 → 50`, `100 → 90`, `150 → 135`, `200 → 160` e `250 → 200`.
 Também há testes para zero, R$ 99,99 e arredondamento: `123.45 → 111.11`, `199.99 → 179.99`, `200.03 → 160.02` e `100.05 → 90.05`.
@@ -88,7 +88,7 @@ Cada comportamento foi desenvolvido seguindo esta ordem:
 2. **Green:** implementar o comportamento e executar novamente toda a suíte. A implementação e a saída foram registradas no commit `Implementa ...`.
 3. **Refactor:** melhorar a organização quando houve oportunidade e executar novamente os testes. Os descontos tiveram o arredondamento centralizado e os limites nomeados. No frete, os limites e preços passaram a usar constantes. A calculadora permaneceu simples, sem necessidade de uma refatoração adicional.
 
-Os arquivos de `evidencias/` contêm comando, etapa, fase, data da execução em UTC, código de saída e saída do Vitest. As falhas foram efetivamente executadas, e os commits preservam o estado do código de cada fase. Nos primeiros testes de cada módulo, a falha ocorre pela ausência da função; nas etapas seguintes, as regras ainda não implementadas causam falhas de resultado.
+Os resultados das execuções estão em `evidencias/`, com a fase, o comando, a data e a saída do Vitest. Nos primeiros testes de cada módulo, a falha ocorre pela ausência da função; nas etapas seguintes, pelas regras que ainda não estavam implementadas.
 
 | Comportamento | Commit Red | Commit Green | Evidências |
 | --- | --- | --- | --- |
@@ -116,23 +116,10 @@ Para consultar a sequência pelo terminal:
 git log --reverse --oneline
 ```
 
-O registrador pode ser usado em novos ciclos:
-
-```bash
-node scripts/registrar-tdd.mjs red 15-novo-comportamento
-# Implementar o comportamento antes de executar o próximo comando.
-node scripts/registrar-tdd.mjs green 15-novo-comportamento
-```
-
-O script só aceita falha com código 1 na fase Red e sucesso com código 0 nas demais fases. Ele registra o resultado, mas não cria commits automaticamente.
+O script `scripts/registrar-tdd.mjs` salva a saída dos testes em cada etapa: código 1 na fase Red e código 0 nas fases Green e Refactor.
 
 ## Observações sobre a implementação
 
 Na divisão, JavaScript retorna `Infinity` ao dividir por zero; por isso foi necessário tratar esse caso explicitamente. Nos descontos, aplicar apenas `valor * 0.9` deixava resultados como `111.105`. O teste de arredondamento revelou esse problema antes da correção.
 
-Ao concluir, a suíte tem **23 testes passando em três arquivos**, além da verificação de tipos com `npm run typecheck`.
-
-## Entrega
-
-Repositório público: [atividade-pratica-tdd-github](https://github.com/KaueKendric/atividade-pratica-tdd-github).
-Esse é o link para enviar ao professor; o acesso ao código e ao histórico não exige convite.
+A suíte tem **23 testes passando em três arquivos**. A verificação de tipos é executada com `npm run typecheck`.
