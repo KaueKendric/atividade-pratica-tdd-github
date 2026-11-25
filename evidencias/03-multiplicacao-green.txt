@@ -1,0 +1,22 @@
+Etapa: 03-multiplicacao
+Fase: green
+Execução (UTC): 2026-11-25T11:11:39.284Z
+Comando: npm test -- --reporter=verbose
+Código de saída: 0
+
+
+> atividade-pratica-tdd-github@1.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.5 D:/Dev/atividade-pratica-tdd-github
+
+ ✓ tests/calculadora.test.ts > Calculadora de operações > soma 3 e 5 e retorna 8 2ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > subtrai 4 de 10 e retorna 6 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > multiplica 4 por 3 e retorna 12 0ms
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  08:11:38
+   Duration  247ms (transform 25ms, setup 0ms, import 50ms, tests 3ms, environment 0ms)
+
