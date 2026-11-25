@@ -1,0 +1,40 @@
+Etapa: 05-divisao-por-zero
+Fase: red
+Execução (UTC): 2026-11-25T11:11:44.231Z
+Comando: npm test -- --reporter=verbose
+Código de saída: 1
+
+
+> atividade-pratica-tdd-github@1.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.5 D:/Dev/atividade-pratica-tdd-github
+
+ ✓ tests/calculadora.test.ts > Calculadora de operações > soma 3 e 5 e retorna 8 2ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > subtrai 4 de 10 e retorna 6 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > multiplica 4 por 3 e retorna 12 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > divide 10 por 2 e retorna 5 0ms
+ × tests/calculadora.test.ts > Calculadora de operações > lança o erro Divisão por zero ao dividir por zero 3ms
+   → expected function to throw an error, but it didn't
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  08:11:43
+   Duration  255ms (transform 25ms, setup 0ms, import 50ms, tests 6ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/calculadora.test.ts > Calculadora de operações > lança o erro Divisão por zero ao dividir por zero
+AssertionError: expected function to throw an error, but it didn't
+ ❯ tests/calculadora.test.ts:22:46
+     20|
+     21|   it("lança o erro Divisão por zero ao dividir por zero", () => {
+     22|     expect(() => calculadora.dividir(10, 0)).toThrow(new Error("Divisã…
+       |                                              ^
+     23|   });
+     24| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

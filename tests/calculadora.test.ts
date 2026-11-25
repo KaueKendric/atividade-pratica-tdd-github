@@ -17,4 +17,8 @@ describe("Calculadora de operações", () => {
   it("divide 10 por 2 e retorna 5", () => {
     expect(calculadora.dividir(10, 2)).toBe(5);
   });
+
+  it("lança o erro Divisão por zero ao dividir por zero", () => {
+    expect(() => calculadora.dividir(10, 0)).toThrow(new Error("Divisão por zero"));
+  });
 });
