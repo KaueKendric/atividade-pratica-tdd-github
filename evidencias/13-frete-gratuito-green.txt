@@ -1,0 +1,42 @@
+Etapa: 13-frete-gratuito
+Fase: green
+Execução (UTC): 2026-11-25T11:13:33.054Z
+Comando: npm test -- --reporter=verbose
+Código de saída: 0
+
+
+> atividade-pratica-tdd-github@1.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.5 D:/Dev/atividade-pratica-tdd-github
+
+ ✓ tests/frete.test.ts > Cálculo de frete > compra de R$ 0 paga R$ 20 de frete 2ms
+ ✓ tests/frete.test.ts > Cálculo de frete > compra de R$ 50 paga R$ 20 de frete 0ms
+ ✓ tests/frete.test.ts > Cálculo de frete > compra de R$ 99.99 paga R$ 20 de frete 0ms
+ ✓ tests/frete.test.ts > Cálculo de frete > compra de R$ 100 paga frete reduzido 0ms
+ ✓ tests/frete.test.ts > Cálculo de frete > compra de R$ 199.99 paga frete reduzido 0ms
+ ✓ tests/frete.test.ts > Cálculo de frete > compra de R$ 200 recebe frete gratuito 0ms
+ ✓ tests/frete.test.ts > Cálculo de frete > compra de R$ 250 recebe frete gratuito 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > compra de R$ 0 fica em R$ 0 2ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > compra de R$ 50 fica em R$ 50 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > compra de R$ 99.99 fica em R$ 99.99 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > aplica dez por cento a R$ 100 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > aplica dez por cento a R$ 150 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > aplica vinte por cento a R$ 200 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > aplica vinte por cento a R$ 250 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > arredonda o valor final de R$ 123.45 para R$ 111.11 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > arredonda o valor final de R$ 199.99 para R$ 179.99 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > arredonda o valor final de R$ 200.03 para R$ 160.02 0ms
+ ✓ tests/descontos.test.ts > Sistema de descontos > arredonda o valor final de R$ 100.05 para R$ 90.05 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > soma 3 e 5 e retorna 8 2ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > subtrai 4 de 10 e retorna 6 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > multiplica 4 por 3 e retorna 12 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > divide 10 por 2 e retorna 5 0ms
+ ✓ tests/calculadora.test.ts > Calculadora de operações > lança o erro Divisão por zero ao dividir por zero 1ms
+
+ Test Files  3 passed (3)
+      Tests  23 passed (23)
+   Start at  08:13:32
+   Duration  296ms (transform 56ms, setup 0ms, import 134ms, tests 14ms, environment 0ms)
+
