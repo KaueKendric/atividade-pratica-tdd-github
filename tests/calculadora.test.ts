@@ -13,4 +13,8 @@ describe("Calculadora de operações", () => {
   it("multiplica 4 por 3 e retorna 12", () => {
     expect(calculadora.multiplicar(4, 3)).toBe(12);
   });
+
+  it("divide 10 por 2 e retorna 5", () => {
+    expect(calculadora.dividir(10, 2)).toBe(5);
+  });
 });
